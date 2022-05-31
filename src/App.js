@@ -43,13 +43,16 @@ function App() {
       </section>
       <section>
         <h4>List goes here:</h4>
-        {list.map((color, index) => {
-          return (
-            <div>
-              <SingleColor index={index} key={index} {...color} />
-            </div>
-          );
-        })}
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+          }}
+        >
+          {list.map((color, index) => {
+            return <SingleColor index={index} key={index} {...color} />;
+          })}
+        </div>
       </section>
     </>
   );
