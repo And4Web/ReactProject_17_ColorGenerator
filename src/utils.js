@@ -1,7 +1,10 @@
-import React from "react";
-
-function utils() {
-  return <div>utils</div>;
+function componentToHex(c) {
+  var hex = c.toString(16);
+  return hex.length == 1 ? "0" + hex : hex;
 }
 
-export default utils;
+function rgbToHex(r, g, b) {
+  return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+}
+
+export default rgbToHex;

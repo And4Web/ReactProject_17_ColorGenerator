@@ -15,6 +15,7 @@ function App() {
     try {
       setBorderColor("1px solid black");
       const colors = new Values(color).all(10);
+      setList(colors);
       console.log(colors);
     } catch (error) {
       setBorderColor("1px solid red");
@@ -42,9 +43,18 @@ function App() {
       </section>
       <section>
         <h4>List goes here:</h4>
+        {list.map((color, index) => {
+          return (
+            <div>
+              <SingleColor index={index} key={index} {...color} />
+            </div>
+          );
+        })}
       </section>
     </>
   );
 }
 
 export default App;
+
+//start at 3:30:00
